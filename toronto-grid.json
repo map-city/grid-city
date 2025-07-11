@@ -5,20 +5,20 @@
 		"maputnik:renderer": "mbgljs",
 		"attribution": "MappedIn basemap v2"
 	},
-	"glyphs": "https://osm-studio.github.io/assets/fonts/{fontstack}/{range}.pbf",
-	"sprite": "https://osm-studio.github.io/assets/sprites/sprites",
+	"glyphs": "https://mapcity.io/grid-city/assets/fonts/{fontstack}/{range}.pbf",
+	"sprite": "https://mapcity.io/grid-city/assets/sprites/sprites",
 	"sources": {
 		"toronto_grid_lines": {
 			"type": "vector",
-			"tiles": ["https://mapcity.io/toronto-bia/data/toronto_grid_lines/{z}/{x}/{y}.pbf"]
+			"tiles": ["https://mapcity.io/grid-city/data/toronto_grid_lines/{z}/{x}/{y}.pbf"]
 		},
 		"toronto_grid_polygons": {
 			"type": "vector",
-			"tiles": ["https://mapcity.io/toronto-bia/data/toronto_grid_polygons/{z}/{x}/{y}.pbf"]
+			"tiles": ["https://mapcity.io/grid-city/data/toronto_grid_polygons/{z}/{x}/{y}.pbf"]
 		},
 		"toronto_grid_points": {
 			"type": "vector",
-			"tiles": ["https://mapcity.io/toronto-bia/data/toronto_grid_points/{z}/{x}/{y}.pbf"]
+			"tiles": ["https://mapcity.io/grid-city/data/toronto_grid_points/{z}/{x}/{y}.pbf"]
 		}
 	},
 	"layers": [
