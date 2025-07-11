@@ -29,15 +29,15 @@
 <body>
 	<div id="map-container">
 		<div id="map"></div>
-		<!--<div id="map-toggle"><i class="fas fa-up-right-and-down-left-from-center"></i></div>-->
+		<div id="map-toggle"><i class="fas fa-up-right-and-down-left-from-center"></i></div>
 	</div>
 
 	<script>
 
 		const locationFile = 'data/directory/downtownwest.geojson';
 		const featureIds = ['concat', ['get', 'name'], '|'];
-		const minZoom = 14;
-		const maxZoom = 18;
+		const minZoom = 15;
+		const maxZoom = 17;
 		let locationData;
 		let currentPopup = null;
 
