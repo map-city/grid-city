@@ -62,17 +62,6 @@
 				"fill-opacity": 1
 			}
 		},
-        {
-			"source": "toronto_grid_polygons",
-			"source-layer": "toronto_grid_polygons",
-			"id": "grid-lines",
-			"type": "line",
-			"paint": {
-				"line-color": "hsl(0, 0%, 95%)",
-				"line-width": 5,
-				"line-opacity": 1
-			}
-		},
 		{
 			"source": "toronto_grid_lines",
 			"source-layer": "toronto_grid_lines",
@@ -124,34 +113,37 @@
 		{
 			"source": "toronto_grid_points",
 			"source-layer": "toronto_grid_points",
-			"id": "poi-amenity",
+			"id": "poi-amenity-square",
+			"type": "symbol",
+			"filter": [ "all", [ "has", "amenity" ], [ "has", "name"] ],
+			"layout": {
+				"icon-image": "square",
+				"icon-size": 1,
+				"icon-anchor": "center",
+				"icon-allow-overlap": true,
+				"icon-ignore-placement": false,
+				"icon-offset": [0, 0]
+			},
+			"paint": {
+				"icon-color": "hsl(24, 32%, 71%)"
+			}
+		},
+		{
+			"source": "toronto_grid_points",
+			"source-layer": "toronto_grid_points",
+			"id": "poi-amenity-symbol",
 			"type": "symbol",
 			"filter": [ "all", [ "has", "amenity" ], [ "has", "name"] ],
 			"layout": {
 				"icon-size": 0.5,
-				"symbol-placement": "point",
-				"icon-optional": false,
-				"icon-image": [ "match", [ "get", "amenity" ], "arts_centre", "icon-art_gallery", "atm", "icon-atm", "bank", "icon-bank", "bar", "icon-bar", "bench", "icon-bench", "bicycle_rental", "icon-bicycle_share", "biergarten", "icon-beergarden", "cafe", "icon-cafe", "car_rental", "icon-car_rental", "car_sharing", "icon-car_rental", "car_wash", "icon-car_wash", "cinema", "icon-cinema", "college", "icon-college", "community_centre", "icon-community", "dentist", "icon-dentist", "doctors", "icon-doctor", "dog_park", "icon-dog_park", "drinking_water", "icon-drinking_water", "embassy", "icon-embassy", "fast_food", "icon-fast_food", "fire_station", "icon-fire_station", "fountain", "icon-fountain", "grave_yard", "icon-cemetery", "hospital", "icon-hospital", "hunting_stand", "icon-huntingstand", "library", "icon-library", "marketplace", "icon-marketplace", "nightclub", "icon-nightclub", "nursing_home", "icon-nursinghome", "pharmacy", "icon-pharmacy", "place_of_worship", "icon-place_of_worship", "playground", "icon-playground", "police", "icon-police", "post_box", "icon-postbox", "post_office", "icon-post", "prison", "icon-prison", "pub", "icon-beer", "recycling", "icon-recycling", "restaurant", "icon-restaurant", "school", "icon-school", "shelter", "icon-shelter", "telephone", "icon-telephone", "theatre", "icon-theatre", "toilets", "icon-toilet", "townhall", "icon-town_hall", "vending_machine", "icon-vendingmachine", "veterinary", "icon-veterinary", "waste_basket", "icon-waste_basket", "unknown" ],
-				"text-font": [ "montserrat-semibold" ],
-				"text-size": 10,
-				"text-field": ["get", "name"],
-				"text-max-width": 8,
-				"text-line-height": 1,
-				"icon-anchor": "bottom",
-				"text-anchor": "top",
+				"icon-image": ["match", ["get", "amenity"], "arts_centre", "art-gallery", "atm", "atm", "bank", "bank", "bar", "bar", "bench", "marker", "bicycle_rental", "bicycle-share", "biergarten", "beer", "cafe", "cafe", "car_rental", "car", "car_sharing", "car", "car_wash", "car", "cinema", "cinema", "college", "college", "community_centre", "town-hall", "dentist", "dentist", "doctors", "doctor", "dog_park", "park", "drinking_water", "drinking-water", "embassy", "embassy", "fast_food", "restaurant", "fire_station", "fire-station", "fountain", "fountain", "grave_yard", "cemetery", "hospital", "hospital", "library", "library", "nightclub", "music", "pharmacy", "pharmacy", "place_of_worship", "place-of-worship", "playground", "playground", "police", "police", "post_box", "post", "post_office", "post", "pub", "beer", "recycling", "recycling", "restaurant", "restaurant", "school", "school", "shelter", "shelter", "telephone", "telephone", "theatre", "theatre", "toilets", "toilets", "townhall", "town-hall", "vending_machine", "vending-machine", "veterinary", "veterinary", "waste_basket", "recycling", "marker"],
+				"icon-anchor": "center",
 				"icon-allow-overlap": false,
-				"text-allow-overlap": false,
-				"icon-ignore-placement": false,
-				"text-ignore-placement": false
+				"icon-ignore-placement": false
 			},
 			"paint": {
-				"icon-color": "hsl(0, 0%, 50%)",
-				"icon-opacity": 1,
-				"text-color": "hsl(0, 0%, 50%)",
-				"text-opacity": 1,
-				"text-halo-color": "hsl(0, 0%, 100%)",
-				"text-halo-width": 0,
-				"text-halo-blur": 0
+				"icon-color": "hsl(0, 0%, 100%)",
+				"icon-opacity": 1
 			}
 		},
 		{
