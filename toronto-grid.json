@@ -6,7 +6,7 @@
 		"attribution": "MappedIn basemap v2"
 	},
 	"glyphs": "https://mapcity.io/grid-city/assets/fonts/{fontstack}/{range}.pbf",
-	"sprite": "https://mapcity.io/grid-city/assets/sprites/sprites",
+	"sprite": "https://mapcity.io/grid-city/assets/sprites/sprites-maki",
 	"sources": {
 		"toronto_grid_lines": {
 			"type": "vector",
