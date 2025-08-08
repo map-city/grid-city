@@ -111,6 +111,23 @@
 			}
 		},
 		{
+			"source": "toronto_grid_lines",
+			"source-layer": "toronto_grid_lines",
+			"id": "streets-divider",
+			"type": "line",
+			"filter": [ "in", "highway", "motorway", "trunk", "primary", "secondary", "tertiary" ],
+			"paint": {
+				"line-color": "hsl(210, 89%, 100%)",
+				"line-width": 2,
+				"line-opacity": 1,
+				"line-dasharray": [4, 4]
+			},
+			"layout": {
+				"line-join": "round",
+				"line-cap": "round"
+			}
+		},
+		{
 			"source": "toronto_grid_points",
 			"source-layer": "toronto_grid_points",
 			"id": "poi-amenity-square",
@@ -118,7 +135,7 @@
 			"filter": [ "all", [ "has", "amenity" ], [ "has", "name"] ],
 			"layout": {
 				"icon-image": "square",
-				"icon-size": 1,
+				"icon-size": 2,
 				"icon-anchor": "center",
 				"icon-allow-overlap": true,
 				"icon-ignore-placement": false,
@@ -135,7 +152,7 @@
 			"type": "symbol",
 			"filter": [ "all", [ "has", "amenity" ], [ "has", "name"] ],
 			"layout": {
-				"icon-size": 0.5,
+				"icon-size": 1,
 				"icon-image": ["match", ["get", "amenity"], "arts_centre", "art-gallery", "atm", "atm", "bank", "bank", "bar", "bar", "bench", "marker", "bicycle_rental", "bicycle-share", "biergarten", "beer", "cafe", "cafe", "car_rental", "car", "car_sharing", "car", "car_wash", "car", "cinema", "cinema", "college", "college", "community_centre", "town-hall", "dentist", "dentist", "doctors", "doctor", "dog_park", "park", "drinking_water", "drinking-water", "embassy", "embassy", "fast_food", "restaurant", "fire_station", "fire-station", "fountain", "fountain", "grave_yard", "cemetery", "hospital", "hospital", "library", "library", "nightclub", "music", "pharmacy", "pharmacy", "place_of_worship", "place-of-worship", "playground", "playground", "police", "police", "post_box", "post", "post_office", "post", "pub", "beer", "recycling", "recycling", "restaurant", "restaurant", "school", "school", "shelter", "shelter", "telephone", "telephone", "theatre", "theatre", "toilets", "toilets", "townhall", "town-hall", "vending_machine", "vending-machine", "veterinary", "veterinary", "waste_basket", "recycling", "marker"],
 				"icon-anchor": "center",
 				"icon-allow-overlap": false,

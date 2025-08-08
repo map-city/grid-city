@@ -53,7 +53,33 @@
 			pitch: 0,
 			hash: true
 		});
-</script>
+
+		map.on("load", () => {
+
+			// Add dem source
+			map.addSource('toronto_dem', {
+				type: 'vector',
+				tiles: ['https://mapcity.io/grid-city/data/toronto_dem/{z}/{x}/{y}.pbf']
+			});
+
+			// Add 3d dem
+			map.addLayer({
+				'id': 'dem',
+				'source': 'toronto_dem',
+				'source-layer': 'toronto_dem',
+				'type': 'fill-extrusion',
+				'paint': {
+					'fill-extrusion-color': 'hsl(280, 10%, 40%)',
+					'fill-extrusion-height': ['get', 'height'],
+					'fill-extrusion-base': 0,
+					'fill-extrusion-opacity': ['interpolate', ['linear'], ['zoom'], 15, 0, 16, 0.7, 17, 0.7, 18, 0]
+				},
+				'minzoom': 15
+			});
+
+		});
+
+	</script>
 
 	<script>
 		const mapDiv = document.getElementById('map');
@@ -73,8 +99,6 @@
 			mapDiv.classList.toggle('inset', isInset);
 
 			// Swap icon to show the action on click:
-			// inset: show expand icon (to go full screen)
-			// full screen: show collapse icon (to go inset)
 			icon.className = isInset
 				? 'fas fa-up-right-and-down-left-from-center'
 				: 'fas fa-down-left-and-up-right-to-center';
