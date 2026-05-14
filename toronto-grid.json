@@ -39,7 +39,7 @@
 			"id": "water",
 			"type": "fill",
 			"paint": {
-				"fill-color": "hsl(0, 0%, 0%)",
+				"fill-color": "hsl(195, 60%, 55%)",
 				"fill-opacity": 1
 			}
 		},
