@@ -19,6 +19,10 @@
 		"toronto_grid_points": {
 			"type": "vector",
 			"tiles": ["https://mapcity.io/grid-city/data/toronto_grid_points/{z}/{x}/{y}.pbf"]
+		},
+		"toronto_grid_water": {
+			"type": "vector",
+			"tiles": ["https://mapcity.io/grid-city/data/toronto_grid_water/{z}/{x}/{y}.pbf"]
 		}
 	},
 	"layers": [
@@ -27,6 +31,16 @@
 			"type": "background",
 			"paint": {
 				"background-color": "hsl(0, 0%, 95%)"
+			}
+		},
+	        {
+			"source": "toronto_grid_water",
+			"source-layer": "toronto_grid_water",
+			"id": "water",
+			"type": "fill",
+			"paint": {
+				"fill-color": "hsl(0, 0%, 0%)",
+				"fill-opacity": 1
 			}
 		},
         {
@@ -130,36 +144,18 @@
 		{
 			"source": "toronto_grid_points",
 			"source-layer": "toronto_grid_points",
-			"id": "poi-amenity-square",
-			"type": "symbol",
-			"filter": [ "all", [ "has", "amenity" ], [ "has", "name"] ],
-			"layout": {
-				"icon-image": "square",
-				"icon-size": 2,
-				"icon-anchor": "center",
-				"icon-allow-overlap": true,
-				"icon-ignore-placement": false,
-				"icon-offset": [0, 0]
-			},
-			"paint": {
-				"icon-color": "hsl(24, 32%, 71%)"
-			}
-		},
-		{
-			"source": "toronto_grid_points",
-			"source-layer": "toronto_grid_points",
 			"id": "poi-amenity-symbol",
 			"type": "symbol",
 			"filter": [ "all", [ "has", "amenity" ], [ "has", "amenity"] ],
 			"layout": {
 				"icon-size": 1,
-				"icon-image": ["match", ["get", "amenity"], "arts_centre", "art-gallery", "atm", "bank", "bank", "bank", "bar", "bar", "bench", "picnic-site", "bicycle_rental", "bicycle-share", "biergarten", "beergarden", "bus_stop", "bus", "cafe", "cafe", "car_rental", "car-rental", "car_sharing", "car-rental", "car_wash", "car-rental", "cinema", "cinema", "college", "college", "community_centre", "building", "dentist", "dentist", "doctors", "doctor", "dog_park", "dog_park", "drinking_water", "drinking_water", "embassy", "embassy", "fast_food", "fast-food", "fire_station", "fire-station", "fountain", "water", "grave_yard", "cemetery", "hospital", "hospital", "hunting_stand", "huntingstand", "library", "library", "light_rail", "rail-light", "marketplace", "grocery", "nightclub", "nightclub", "nursing_home", "nursinghome", "pharmacy", "pharmacy", "place_of_worship", "place-of-worship", "playground", "playground", "police", "police", "post_box", "post", "post_office", "post", "prison", "prison", "pub", "beer", "recycling", "recycling", "restaurant", "restaurant", "school", "school", "shelter", "shelter", "station", "rail-metro", "telephone", "telephone", "theatre", "theatre", "toilets", "toilet", "townhall", "town-hall", "tram_stop", "rail-light", "vending_machine", "convenience", "veterinary", "veterinary", "waste_basket", "waste_basket", "marker"],
+				"icon-image": ["match", ["get", "amenity"], "arts_centre", "art-gallery", "atm", "bank", "bank", "bank", "bar", "bar", "bench", "picnic-site", "bicycle_rental", "bicycle-share", "biergarten", "beergarden", "bus_stop", "bus", "cafe", "cafe", "car_rental", "car-rental", "car_sharing", "car-rental", "car_wash", "car-rental", "cinema", "cinema", "college", "college", "community_centre", "building", "dentist", "dentist", "doctors", "doctor", "dog_park", "dog_park", "drinking_water", "drinking-water", "embassy", "embassy", "fast_food", "fast-food", "fire_station", "fire-station", "fountain", "water", "grave_yard", "cemetery", "hospital", "hospital", "hunting_stand", "huntingstand", "library", "library", "light_rail", "rail-light", "marketplace", "grocery", "nightclub", "nightclub", "nursing_home", "nursinghome", "pharmacy", "pharmacy", "place_of_worship", "place-of-worship", "playground", "playground", "police", "police", "post_box", "post", "post_office", "post", "prison", "prison", "pub", "beer", "recycling", "recycling", "restaurant", "restaurant", "school", "school", "shelter", "shelter", "station", "rail-metro", "telephone", "telephone", "theatre", "theatre", "toilets", "toilet", "townhall", "town-hall", "tram_stop", "rail-light", "vending_machine", "convenience", "veterinary", "veterinary", "waste_basket", "waste-basket", "marker"],
 				"icon-anchor": "center",
 				"icon-allow-overlap": false,
 				"icon-ignore-placement": false
 			},
 			"paint": {
-				"icon-color": "hsl(0, 0%, 100%)",
+				"icon-color": "hsla(0, 0%, 0%, 0.3)",
 				"icon-opacity": 1
 			}
 		},
@@ -176,9 +172,9 @@
 				"text-font": [ "montserrat-semibold" ],
 				"text-letter-spacing": 0.2,
 				"symbol-placement": "line",
-				"symbol-spacing": 250,
+				"symbol-sort-key": 100,
 				"text-anchor": "center",
-				"text-size": [ "interpolate", [ "exponential", 1.5 ], [ "zoom" ], 15, 8, 18, 30 ]
+				"text-size": [ "interpolate", [ "exponential", 1.5 ], [ "zoom" ], 15, 6, 18, 20 ]
 			},
 			"paint": {
 				"text-color": "hsl(0, 0%, 50%)",
